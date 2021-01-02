@@ -26,7 +26,7 @@ def addRemote():
     db.session.add(remote)
     db.session.commit()
 
-    return jsonify(remote)
+    return jsonify(serializeRemote(remote))
 
 
 @app.route("/remote", methods=['GET'])
@@ -91,7 +91,7 @@ def addCommand():
     db.session.add(command)
     db.session.commit()
 
-    return jsonify(command)
+    return jsonify(serializeCommand(command))
 
 
 def serializeRemote(remote):
