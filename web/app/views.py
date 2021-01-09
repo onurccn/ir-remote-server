@@ -113,7 +113,7 @@ def serializeCommand(command):
         'name': command.name,
         'decode_type': command.decodeType,
         'value': command.value,
-        'raw': command.raw,
+        'raw': command.raw.split(","),
         'rawLen': command.rawLen,
         'bitLen': command.bitLen,
         'pos': command.position
@@ -126,7 +126,7 @@ def parseCommand(commandDict):
     value = commandDict['value']
     rawLen = commandDict['rawLen']
     bitLen = commandDict['bitLen']
-    raw = commandDict['raw']
+    raw = ",".join(commandDict['raw'])
     pos = commandDict['pos']
     raw = ','.join(raw)
 
