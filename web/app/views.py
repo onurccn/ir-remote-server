@@ -126,7 +126,7 @@ def parseCommand(commandDict):
     value = commandDict['value']
     rawLen = commandDict['rawLen']
     bitLen = commandDict['bitLen']
-    raw = ",".join(commandDict['raw'])
+    raw = ",".join(str(commandDict['raw']))
     pos = commandDict['pos']
     raw = ','.join(raw)
 
