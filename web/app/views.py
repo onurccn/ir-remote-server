@@ -34,8 +34,8 @@ def getRemotes():
     remotes = Remote.query.all()
     remotesDict = []
     for remote in remotes:
-        remoteDict = serializeRemote(remote)
-        remotesDict.append(remoteDict)
+        # remoteDict = serializeRemote(remote)
+        remotesDict.append(remote.name)
     return jsonify(remotesDict)
 
 
