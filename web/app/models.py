@@ -20,7 +20,7 @@ class Command(db.Model):
     remote_id = db.Column(db.Integer, db.ForeignKey('remotes.id'), nullable=False)
     name = db.Column(db.String)
     decodeType = db.Column(db.Integer)
-    value = db.Column(db.Integer)
+    value = db.Column(db.BigInteger)
     raw = db.Column(db.String)  # comma sepereted integer list
     rawLen = db.Column(db.Integer)
     bitLen = db.Column(db.Integer)
