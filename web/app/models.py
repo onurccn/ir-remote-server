@@ -6,7 +6,7 @@ class Remote(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
-    commands = db.relationship('Command', backref='remote', order_by="asc(Command.position)", lazy=True)
+    commands = db.relationship('Command', cascade="all,delete", backref='remote', order_by="asc(Command.position)", lazy=True)
 
     def __init__(self, name, commands=None):
         self.name = name

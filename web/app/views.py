@@ -23,6 +23,12 @@ def addRemote():
         commands.append(parseCommand(commandDict))
 
     remote = Remote(name, commands)
+    currentCommand = Remote.query.filter_by(name=remote.name).first()
+    if currentCommand:
+        Command.query.filter_by(remote_id=currentCommand.id).delete()
+        db.session.commit()
+        Remote.query.filter_by(name=remote.name).delete()
+
     db.session.add(remote)
     db.session.commit()
 
